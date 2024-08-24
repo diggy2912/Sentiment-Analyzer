@@ -25,7 +25,7 @@ The Political Sentiment Analyzer is an advanced tool designed to detect and anal
 ## To-Do List
 
 ### Data Collection
-- [ ] **Use `ntscraper` Library**: Collect tweets related to the India budget using the `ntscraper` library.
+- [x] **Use `ntscraper` Library**: Collect tweets related to the India budget using the `ntscraper` library.
 
 ### Data Preprocessing
 - [ ] **Implement Data Cleaning**: Develop scripts to clean and preprocess the collected tweet data.
