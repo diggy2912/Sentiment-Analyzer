@@ -28,8 +28,8 @@ The Political Sentiment Analyzer is an advanced tool designed to detect and anal
 - [x] **Use `ntscraper` Library**: Collect tweets related to the India budget using the `ntscraper` library.
 
 ### Data Preprocessing
-- [ ] **Implement Data Cleaning**: Develop scripts to clean and preprocess the collected tweet data.
-- [ ] **Feature Extraction**: Create methods for extracting relevant features from tweets.
+- [x] **Implement Data Cleaning**: Develop scripts to clean and preprocess the collected tweet data.
+- [x] **Feature Extraction**: Create methods for extracting relevant features from tweets.
 
 ### Model Building
 - [ ] **Build Political Detection Model**: Develop and train an ML model to identify political tweets related to the India budget.
