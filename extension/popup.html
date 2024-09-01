@@ -3,6 +3,12 @@
 <head>
   <title>Political Sentiment Analyzer</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     ::-webkit-scrollbar {
       width: 5px;
     }
@@ -20,16 +26,15 @@
     }
 
     body {
-      box-sizing: border-box;
-      padding: 0 3%;
       width: 400px;
+      padding: 3%;
       color: white;
       background-color: rgb(53, 53, 53);
       font-size: 14px;
     }
 
-    h1 {
-      text-align: center;
+    h3 {
+      margin: 3% 0;
     }
 
     #tweet-text {
@@ -66,9 +71,9 @@
     }
 
     .btn {
-      width: 40%;
+      width: 50%;
       padding: 2%;
-      margin: 5% auto;
+      margin: 3% auto 0;
       cursor: pointer;
       border-radius: 5px;
       color: black;
@@ -87,7 +92,7 @@
 </head>
 <body>
   <h1>Political Sentiment Analyzer</h1>
-  <h3>Tweet Text:</h3>
+  <h3 id='tweet-text-header'>Tweet Text:</h3>
   <p id='tweet-text'></p>
   <p id='sentiment'></p>
   <div class='btn' id='extract-tweet'>Get Tweet Text</div>
