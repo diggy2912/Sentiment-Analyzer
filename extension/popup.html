@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Political Sentiment Analyzer</title>
+  <style>
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgb(117, 117, 117); 
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(255, 255, 255); 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(221, 221, 221); 
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 0 3%;
+      width: 400px;
+      color: white;
+      background-color: rgb(53, 53, 53);
+      font-size: 14px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #tweet-text {
+      max-height: 250px;
+      overflow: auto;
+      padding: 5%;
+      white-space: pre-wrap;
+      border-radius: 5px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #sentiment {
+      display: flex;
+      align-items: center;
+      gap: 2%;
+    }
+
+    #sentiment span {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    #sentiment .positive {
+      color: green;
+    }
+
+    #sentiment .negative {
+      color: red;
+    }
+
+    #sentiment .neutral {
+      color: yellow;
+    }
+
+    .btn {
+      width: 40%;
+      padding: 2%;
+      margin: 5% auto;
+      cursor: pointer;
+      border-radius: 5px;
+      color: black;
+      background-color: white;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px 5px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .btn:hover {
+      background-color: rgb(221, 221, 221);
+      transform: translate(1px, 1px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Political Sentiment Analyzer</h1>
+  <h3>Tweet Text:</h3>
+  <p id='tweet-text'></p>
+  <p id='sentiment'></p>
+  <div class='btn' id='extract-tweet'>Get Tweet Text</div>
+  <div class='btn' id='get-sentiment'>Analyze Sentiment</div>
+  <script src='popup.js'></script>
+</body>
+</html>
