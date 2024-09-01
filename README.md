@@ -42,8 +42,8 @@ The Political Sentiment Analyzer is an advanced tool designed to detect and anal
 - [ ] **Develop Deployment Scripts**: Create scripts to handle model requests and responses.
 
 ### Chrome Extension
-- [ ] **Design Chrome Extension**: Create the interface and functionalities for the Chrome extension.
-- [ ] **Develop Extension**: Implement the Chrome extension to interact with the deployed models.
+- [x] **Design Chrome Extension**: Create the interface and functionalities for the Chrome extension.
+- [x] **Develop Extension**: Implement the Chrome extension to interact with the deployed models.
 - [ ] **Integrate with Deployed Models**: Ensure the extension can send requests to and receive responses from the models.
 
 ### General Tasks
