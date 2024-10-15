@@ -20,6 +20,20 @@ extractTweetButton.addEventListener('click', () => {
           extractTweetButton.style.display = 'none'
           getSentimentButton.style.display = 'block'
           tweetText.innerText = response.tweetText
+          fetch('http://localhost:5000/fetch-tweet', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ tweetText: response.tweetText })
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Success:', data);
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
         } else {
           tweetText.innerText = 'Failed to retrieve tweet text!'
         }
