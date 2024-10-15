@@ -32,9 +32,9 @@ The Political Sentiment Analyzer is an advanced tool designed to detect and anal
 - [x] **Feature Extraction**: Create methods for extracting relevant features from tweets.
 
 ### Model Building
-- [ ] **Build Political Detection Model**: Develop and train an ML model to identify political tweets related to the India budget.
-- [ ] **Build Sentiment Analysis Model**: Develop and train an ML model to analyze the sentiment of political tweets.
-- [ ] **Model Evaluation**: Test and evaluate both models for accuracy and performance.
+- [x] **Build Political Detection Model**: Develop and train an ML model to identify political tweets related to the India budget.
+- [x] **Build Sentiment Analysis Model**: Develop and train an ML model to analyze the sentiment of political tweets.
+- [x] **Model Evaluation**: Test and evaluate both models for accuracy and performance.
 
 ### Model Deployment
 - [ ] **Set Up Apache Spark**: Configure Spark environment for data storage and model deployment.
