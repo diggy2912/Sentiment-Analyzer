@@ -15,11 +15,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       .catch((error) => {
         console.log(error)
         sendResponse({ error: error });
-      });
+      })
 
-    // const sentiments = ['positive', 'negative', 'neutral']
-    // const randomIndex = Math.floor(Math.random() * sentiments.length)
-    // sendResponse({ sentiment: sentiments[randomIndex] })
     return true
   }
 })
