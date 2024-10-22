@@ -4,7 +4,8 @@
   "version": "1.0",
   "description": "Analyze the sentiment of tweets related to the India budget using advanced NLP and ML models.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "http://127.0.0.1:5000/"
   ],
   "content_scripts": [
     {
@@ -29,6 +30,6 @@
     "128": "images/icon128.png"
   },
   "host_permissions": [
-    "https://api.your-deployment-url.com/*"
+    "http://127.0.0.1:5000/"
   ]
 }

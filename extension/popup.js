@@ -8,7 +8,7 @@ tweetText.style.display = 'none'
 tweetTextHeader.style.display = 'none'
 sentiment.style.display = 'none'
 getSentimentButton.style.display = 'none'
-
+let tweetTextContent=''
 extractTweetButton.addEventListener('click', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs.length > 0) {
@@ -20,20 +20,7 @@ extractTweetButton.addEventListener('click', () => {
           extractTweetButton.style.display = 'none'
           getSentimentButton.style.display = 'block'
           tweetText.innerText = response.tweetText
-          fetch('http://localhost:5000/fetch-tweet', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ tweetText: response.tweetText })
-          })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Success:', data);
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
+          tweetTextContent=response.tweetText          
         } else {
           tweetText.innerText = 'Failed to retrieve tweet text!'
         }
@@ -43,12 +30,13 @@ extractTweetButton.addEventListener('click', () => {
 })
 
 getSentimentButton.addEventListener('click', () => {
-  chrome.runtime.sendMessage({ action: 'analyzeSentiment' }, (respose) => {
+  chrome.runtime.sendMessage({ action: 'analyzeSentiment', text: tweetTextContent }, (response) => {
     getSentimentButton.style.display = 'none'
     sentiment.style.display = 'flex'
-
-    if (respose.sentiment) {
-      sentiment.innerHTML = `<h3>Sentiment Analysis:</h3> <span class='${respose.sentiment}'>${respose.sentiment}</span>`
+    tweetTextContent=''
+    console.log(response)
+    if (response && response.sentiment) {
+      sentiment.innerHTML = `<h3>Sentiment Analysis:</h3> <span class='${response.sentiment}'>${response.sentiment}</span>`
     } else {
       getSentimentButton.style.display = 'none'
       sentiment.innerText = 'Something went wrong!'

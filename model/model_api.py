@@ -2,9 +2,10 @@ from transformers import pipeline
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 pipe = pipeline("text-classification", model="swaraj150/improved_finetuned_model")
-from confluent_kafka import Producer
-producer = Producer({'bootstrap.servers': 'localhost:9092'})
+# from confluent_kafka import Producer
+# producer = Producer({'bootstrap.servers': 'localhost:9092'})
 app = Flask(__name__)
+CORS(app)  
 @app.route('/classify', methods=['POST'])
 def classify_text():
     try:
@@ -19,7 +20,6 @@ def classify_text():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-CORS(app)  
 @app.route('/fetch-tweet', methods=['POST'])
 def fetch_tweet():
     data = request.json
@@ -27,8 +27,8 @@ def fetch_tweet():
     
     if tweet_text:
         print(f'Received tweet text: {tweet_text}')  
-        producer.produce('tweet_topic', value=tweet_text)
-        producer.flush()
+        # producer.produce('tweet_topic', value=tweet_text)
+        # producer.flush()
         return jsonify({
             'status': 'success',
             'tweetText': tweet_text
